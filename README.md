@@ -23,29 +23,37 @@ The generated OpenSCAD files will try to include `gridfinity-rebuilt-baseplate.s
 
 ### Setting Up the Dependencies
 
-**Option 1: Download the Required Files (Recommended)**
+**Option 1: Keep Files Together**
+
+Place the required library files in the same directory as your generated SCAD file:
 
 1. Go to the [Gridfinity Rebuilt OpenSCAD repository](https://github.com/kennetek/gridfinity-rebuilt-openscad)
-2. Download `gridfinity-rebuilt-baseplate.scad` and any other dependencies it needs
+2. Download these two files:
+   - `gridfinity-rebuilt-baseplate.scad`
+   - `gridfinity-rebuilt-utility.scad`
 3. Place them in the same directory as your generated SCAD file
 4. Reload the file in OpenSCAD
 
-**Option 2: Clone the Entire Repository**
+**Option 2: Set Up OpenSCAD Library Folder (Recommended)**
 
-If you plan to work with Gridfinity designs regularly:
+This approach is cleaner if you'll be working with multiple Gridfinity designs, as any SCAD files you work with will automatically have access to these libraries regardless of where they're stored:
+
+1. In OpenSCAD, go to **File → Show Library Folder...**
+2. This will open the library directory in your file manager
+3. Download these two files from the [Gridfinity Rebuilt OpenSCAD repository](https://github.com/kennetek/gridfinity-rebuilt-openscad) and place them in that library folder:
+   - `gridfinity-rebuilt-baseplate.scad`
+   - `gridfinity-rebuilt-utility.scad`
+4. Restart OpenSCAD (or reload your file)
+
+**Option 3: Clone the Entire Repository**
+
+If you plan to work extensively with Gridfinity designs:
 
 1. Clone or download the entire [Gridfinity Rebuilt OpenSCAD repository](https://github.com/kennetek/gridfinity-rebuilt-openscad)
 2. Place your generated SCAD file in that directory
 3. Open it from there
 
-**Option 3: Set Up OpenSCAD Library Path**
-
-1. Download the Gridfinity files to a permanent location
-2. In OpenSCAD, go to **Edit → Preferences → Library Directories**
-3. Add the directory containing the Gridfinity files
-4. Restart OpenSCAD
-
-The `gridfinity-rebuilt-baseplate.scad` file defines the `gridfinityBaseplate()` module that the generated code uses. Without it, OpenSCAD won't be able to render the baseplate geometry.
+The library files define the `gridfinityBaseplate()` module that the generated code uses. Without them, OpenSCAD won't be able to render the baseplate geometry.
 
 ## 🐳 Running with Docker:
 
