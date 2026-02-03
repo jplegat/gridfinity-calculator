@@ -1,6 +1,6 @@
 services:
   gridfinity:
-    image: gridfinity-calculator:arm64
+    image: ghcr.io/jplegat/gridfinity-calculator:arm64
     container_name: gridfinity-calculator
     ports:
       - "8501:8501"
