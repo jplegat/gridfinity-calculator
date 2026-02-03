@@ -17,6 +17,46 @@ Welcome to the Gridfinity Baseplate Layout Calculator, an optimized tool designe
 4. **Calculate Layout**: Hit the "Calculate Layout" button to generate your optimized layout and BoM.
 5. **Save Your SCAD Files**: Hit the individual buttons for downloading a file at the time, or press download all files in zip format to get all in one archive.
 
+## 🐳 Running with Docker:
+
+### Using Docker Compose (Recommended)
+
+The easiest way to run the application is with Docker Compose:
+
+```bash
+docker-compose up -d
+```
+
+This will pull the pre-built image and start the container. Access the app at `http://localhost:8501`.
+
+To stop the container:
+```bash
+docker-compose down
+```
+
+### Building Locally
+
+If you prefer to build the image yourself:
+
+```bash
+# Build the image
+docker build -t gridfinity-calculator .
+
+# Run the container
+docker run -d -p 8501:8501 --name gridfinity-calculator gridfinity-calculator
+```
+
+### Pulling from Container Registry
+
+You can also pull the pre-built image directly:
+
+```bash
+docker pull ghcr.io/jplegat/gridfinity-calculator:arm64
+docker run -d -p 8501:8501 --name gridfinity-calculator ghcr.io/jplegat/gridfinity-calculator:arm64
+```
+
+Once running, open your browser to `http://localhost:8501` to use the calculator.
+
 ## 🎨 Visualization:
 
 The tool also provides a visual representation of your layout, showing the placement of each baseplate and any necessary padding.
