@@ -17,6 +17,36 @@ Welcome to the Gridfinity Baseplate Layout Calculator, an optimized tool designe
 4. **Calculate Layout**: Hit the "Calculate Layout" button to generate your optimized layout and BoM.
 5. **Save Your SCAD Files**: Hit the individual buttons for downloading a file at the time, or press download all files in zip format to get all in one archive.
 
+## 📦 OpenSCAD Dependencies
+
+The generated OpenSCAD files will try to include `gridfinity-rebuilt-baseplate.scad`, which is a dependency file that needs to be in the same directory (or in OpenSCAD's library path). This file is part of the [Gridfinity Rebuilt OpenSCAD](https://github.com/kennetek/gridfinity-rebuilt-openscad) project - a modular storage system.
+
+### Setting Up the Dependencies
+
+**Option 1: Download the Required Files (Recommended)**
+
+1. Go to the [Gridfinity Rebuilt OpenSCAD repository](https://github.com/kennetek/gridfinity-rebuilt-openscad)
+2. Download `gridfinity-rebuilt-baseplate.scad` and any other dependencies it needs
+3. Place them in the same directory as your generated SCAD file
+4. Reload the file in OpenSCAD
+
+**Option 2: Clone the Entire Repository**
+
+If you plan to work with Gridfinity designs regularly:
+
+1. Clone or download the entire [Gridfinity Rebuilt OpenSCAD repository](https://github.com/kennetek/gridfinity-rebuilt-openscad)
+2. Place your generated SCAD file in that directory
+3. Open it from there
+
+**Option 3: Set Up OpenSCAD Library Path**
+
+1. Download the Gridfinity files to a permanent location
+2. In OpenSCAD, go to **Edit → Preferences → Library Directories**
+3. Add the directory containing the Gridfinity files
+4. Restart OpenSCAD
+
+The `gridfinity-rebuilt-baseplate.scad` file defines the `gridfinityBaseplate()` module that the generated code uses. Without it, OpenSCAD won't be able to render the baseplate geometry.
+
 ## 🐳 Running with Docker:
 
 ### Using Docker Compose (Recommended)
